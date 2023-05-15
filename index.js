@@ -1,5 +1,10 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Logo= require("./lib/logo.js");
+const { 
+  Square,
+  Circle,
+  Triangle}= require("./lib/shapes.js");
 
 const questions = [
     {
