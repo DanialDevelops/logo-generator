@@ -15,7 +15,7 @@ In this project I worked on making a program in node.js to create a logo generat
 -deployed video link: 
 
 ## GitHub Link
-
+https://github.com/DanialDevelops/logo-generator/tree/main
 
 ### Image example of my program
 
