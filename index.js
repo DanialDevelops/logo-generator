@@ -35,17 +35,32 @@ const questions = [
       .prompt(questions)
   
       .then((answers) => {
-        // depending on user answer, circle, triagle, or square
-        // if user select circle
-        if(shape === circle)
-        const circle = new Circle();
-        // pass variable into setColor  
-        circle.setColor()
-        // set ins of logo
-        // pass circle ins into logo
+        let shape;
+        switch (answers.shape) {
+          case "circle":
+            shape = new Circle();
+            break;
+          case "triangle":
+            shape = new Triangle();
+            break;
+          case "square":
+            shape = new Square();
+            break;
+          default:
+            console.log("Invalid shape selected");
+            return;
+        }
+
+        shape.setColor(answers.color);
+        
+        const logo = new Logo(answers.text, answers.textColor, shape);
+        logo.setText(answers.textColor, answers.text);
+        logo.setShape(shape);
+
+        const svgContent = logo.render();
         
   
-        fs.writeFile("logo.svg", , (err) =>
+        fs.writeFile("logo.svg",svgContent , (err) =>
           err
             ? console.log(err)
             : console.log("Successfully created SVG.html file!")
